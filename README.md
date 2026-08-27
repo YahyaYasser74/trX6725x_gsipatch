@@ -4,6 +4,7 @@ An GSI Patch Module Exclusively for Infinix Smart 10/Plus|NFC, Made to Optimize 
 The Requirements;
 
 *. Magisk/KernelSU
+
 *. LSPosed (https://github.com/JingMatrix/Vector/releases#release-v1.11.0)
 
 -.--------------.-
