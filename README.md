@@ -53,4 +53,4 @@ the workarounds & tips for full fixed experience:
 
 #---------...---------#
 
-That's all, Hope you to enjoy with more, fair experience on GSI Builds even fluently, Enjoy! :D
+That's all, Hope you to enjoy with more, fair experience on GSI Builds even fluently, and if you want more essentials/latest news for this device, check my telegram group for module news and incoming updates via "https://t.me/iX6725COM", with the mainly group which finds many X6725 users there with helping and essentials via "@smart10mirror", Enjoy! :D
