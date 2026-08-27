@@ -49,7 +49,7 @@ the workarounds & tips for full fixed experience:
 
 #. - Optimize Display's Colors; this module has internal patches to correct colors saturation, but none of those works (sadly), so you can manually set color saturations via this app i have included within the module;
 
-:- ^ open 'Sa2ration', then let it grant the root pivileges, set the saturation to: 1.35, and exit the app, now your display will look more premium in style!
+:- ^ open 'Sa2ration', then let it grant the root pivileges, set the saturation to: 1.35, and exit the app, now your display will look more premium in style! *NOTE: the display color saturation will restore to the default value after an reboot, so you shall apply the same value everytime sooner.*
 
 #---------...---------#
 
