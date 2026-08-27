@@ -47,6 +47,6 @@ the workarounds & tips for full fixed experience:
 
 :- ^ open 'Sa2ration', then let it grant the root pivileges, set the saturation to: 1.35, and exit the app, now your display will look more premium in style!
 
-.\---------------------/.
+\---------------------/
 
 That's all, Hope you to enjoy with more, fair experience on GSI Builds even fluently, Enjoy! :D
