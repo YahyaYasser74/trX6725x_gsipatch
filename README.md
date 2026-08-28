@@ -47,9 +47,9 @@ the workarounds & tips for full fixed experience:
 
 :- ^ go to phh treble -> display settings -> go to blur rendering and set it to 'disabled', then restart 'SystemUI' to take the effects.
 
-#. - Optimize UI Rendering; the transitions & animations seems not smooth as i see so, even though this module optimizes the UI Rendering as much as possible, sometimes it might not be the best, instead, you can reach with my tweaks with this other phh treble feature for fully smooth experience;
+#. - Optimize UI Rendering; if the transitions & animations seems not *smooth* as you see so, even though if this module optimizes the UI Rendering as much as possible, sometimes it might not be the best for some people, instead, you can reach with fully performance mode with my tweaks with other phh treble feature for fluid experience;
 
-:- ^ go to phh treble -> display settings -> select "Disable HW Overlays"/"Disable SF HWC backpressure" or "Power-mode monitor" to fix more HALs problems that conflicts with SystemUI, then restart the device to take full effects. *NOTE: it might causes more overheating and battery draining since there's no handling through the device HW Overlays, it will uses fully compatible software fallback methods, but it will make the experience even more compatible, only enable this if you see my tweaks aren't enough.*
+:- ^ go to phh treble -> display settings -> select "Disable SF HWC backpressure" or "Power-mode monitor" to fix more HALs problems that conflicts with SystemUI, then restart the device to take full effects.
 
 #. - Optimize Display's Colors; this module has internal patches to correct colors saturation, but none of those works (sadly), so you can manually set color saturations via this app i have included within the module;
 
