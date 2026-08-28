@@ -39,13 +39,17 @@ the workarounds & tips for full fixed experience:
 
 :- ^ go to phh treble -> ims settings -> enable all settings and firstly install the ims apk via it, then click 'Create APN' to apply the changes, then fully restart the phone to take the changes.
 
+#. - Display Backlight Adjustments; this modules fixes the brightness backlight issues, but it might not be enough, so you can perform this workaround to restore full brightness activity;
+
+:- ^ go to phh treble -> display settings -> enable both of "Force alternative backlight scale" and "Allow setting brightness to the lowest possible", and lock down your display and lock up it again, and you will see the brightness adjust normally.
+
 #. - Optimize Blur Rendering; this module enables blur rendering composition by default, if you want fully lightweight experience, you can disable it entirely via this method;
 
 :- ^ go to phh treble -> display settings -> go to blur rendering and set it to 'disabled', then restart 'SystemUI' to take the effects.
 
 #. - Optimize UI Rendering; the transitions & animations seems not smooth as i see so, even though this module optimizes the UI Rendering as much as possible, sometimes it might not be the best, instead, you can reach with my tweaks with this other phh treble feature for fully smooth experience;
 
-:- ^ go to phh treble -> misc features -> select "Disable HW Overlays", then restart the device to take full effects. *NOTE: it might causes more overheating and battery draining since there's no handling through the device HW Overlays, it will uses fully compatible software fallback methods, but it will make the experience even more compatible, only enable this if you see my tweaks aren't enough.*
+:- ^ go to phh treble -> display settings -> select "Disable HW Overlays"/"Disable SF HWC backpressure", then restart the device to take full effects. *NOTE: it might causes more overheating and battery draining since there's no handling through the device HW Overlays, it will uses fully compatible software fallback methods, but it will make the experience even more compatible, only enable this if you see my tweaks aren't enough.*
 
 #. - Optimize Display's Colors; this module has internal patches to correct colors saturation, but none of those works (sadly), so you can manually set color saturations via this app i have included within the module;
 
