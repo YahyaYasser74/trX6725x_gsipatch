@@ -33,7 +33,7 @@ the workarounds & tips for full fixed experience:
 
 #. - Screen Recording Fixation; Google has recently introduced at late of 2023; the 'OMX' codecs for such as an fallback software composition, which makes *conflicts* with pipelines upon Unisoc Hardware Media codecs (via StageFright AOSP combination), since of that, you must apply the fallback software composition instead since Unisoc HALs are poorly made;
 
-:- ^ go to phh treble -> misc settings -> select "Force Software Codecs", then restart the device to take the effects.
+:- ^ go to phh treble -> misc features -> select 'Force Software Codecs', then restart the device to take the effects. *NOTE: if this method didn't work with you, then go to phh treble -> misc features -> select 'Prefer Hardware Codecs' and disable 'Force Software Codecs', it will use native, CCode from Unisoc HALs if it works even better.*
 
 #. - VoLTE / 4G Connectivity Issues; every chipset vendor has specific IMS communication instead of the international 'CAF' complication that AOSP uses by default, which causes 4G issues and fallback to LTE/CMA radio interfaces since it doesn't have an app that maps these calls to these specialized IMS applications, because of that, you must use these settings inside phh treble;
 
