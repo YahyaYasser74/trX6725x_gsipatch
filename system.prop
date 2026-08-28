@@ -1,0 +1,347 @@
+####################################
+# from device/sprd/system/common/system.prop
+####################################
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+### ====================================================================
+
+### TRIPLE-BUFFERING & MEDIA CRASH FIXES (CENTRAL FIXATIONS)
+
+### ====================================================================
+
+media.stagefright.thumbnail.prefer_hw_codecs=true
+media.stagefright.recorder.prefer_hw_codecs=true
+ro.media.recorder-max-base-layer=4
+debug.stagefright.omx_default_rank=0
+debug.stagefright.screen-capture.sw=0
+debug.gralloc.gfx_ubwc_disable=0
+debug.gralloc.enable_fb_ubwc=1
+ro.media.recorder-max-base-layer-fps=60
+
+### Force Triple-Buffering to prevent GPU stalls
+
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+ro.surface_flinger.vsync_event_phase_offset_ns=2000000
+ro.surface_flinger.early_gl_duration_ns=11111111
+ro.surface_flinger.early_gl_app_duration_ns=11111111
+ro.surface_flinger.early_duration_ns=11111111
+debug.sf.frame_rate_multiple_threshold=120
+persist.sys.phh.vrr.high=120
+persist.sys.phh.vrr.low=90
+
+### Prevent SurfaceFlinger from dropping frame sync under heavy multitasking
+
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure 1
+
+### ====================================================================
+
+### COMPLETE STRIP OF ANDROID GO (ALL LAYERS)
+
+### ====================================================================
+
+ro.config.low_ram=false
+ro.config.low_ram.pc=false
+ro.config.low_ram_device=false
+ro.vendor.config.low_ram=false
+ro.vendor.low_ram=false
+ro.odm.config.low_ram=false
+persist.vendor.low_ram=false
+sys.config.low_ram=false
+vendor.config.low_ram=false
+persist.sys.purgeable_assets=1
+ro.hardware.LowRam=false
+ro.lmk.critical_upgrade=false
+ro.vendor.ramconfig=full
+sys.vendor.banner=false
+ro.vendor.config.high_ram=true
+
+# Restores notification shade shortcuts, inline replies, and detailed bubbles
+ro.config.notification_cooldown=true
+persist.sys.notification.bubbles=true
+ro.config.max_notifications=50
+
+# Re-enable advanced system services like the standard Wallpaper service
+ro.config.disable_wallpaper=false
+ro.config.notification_service=true
+
+# Re-enable the fully-featured Android Package Manager (removes Go restrictions)
+ro.config.whoforcedme=full_edition
+pm.dexopt.downgrade_after_inactive_days=10
+
+# Allow multi-windowing, split screen, and system shortcuts
+persist.sys.freeform_window=true
+ro.config.develop_freeform=true
+ro.support_freeform=true
+ro.support_split_screen=true
+ro.support_picture_in_picture=true
+wm.freeform_window_management=1
+persist.wm.debug.freeform_window_management=1
+persist.sys.scrolling.friction=0.015
+
+# Prevents the aggressive killing of background services typical of Android Go
+ro.lmk.critical_upgrade=false
+ro.lmk.enable_userspace_lmk=false
+ro.lmk.low=100
+ro.lmk.medium=0
+
+### ====================================================================
+
+### DALVIK HEAP EXPANSION (STANDARD 4GB+ RAM ALLOCATION)
+
+### ====================================================================
+
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=192m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
+### Background Process Optimization
+
+ro.config.max_starting_bg=16
+ro.sys.fw.bg_apps_limit=24
+
+### ====================================================================
+
+### WINDOW MANAGEMENT & HIGH-EFFICIENCY DEXOPT HOOKS
+
+### ====================================================================
+
+persist.sys.freeform_window=true
+persist.sys.debug.multi_window=true
+persist.wm.debug.desktop_mode=1
+ro.tabs.enable_desktop_mode=true
+
+### Smooth, zero-lag background compilation
+
+pm.dexopt.shared=speed
+dalvik.vm.dex2oat-threads=4
+
+### ====================================================================
+
+### ALWAYS-ON DISPLAY (AOD) STABILIZATION
+
+### ====================================================================
+
+ro.hardware.wakeup_gesture=true
+persist.sys.phh.dt2w=true
+
+# Configures framework power levels for Ambient Display (if supported by your screen)
+doze.display.supported=1
+doze.vibrate.when.prohibited=0
+
+# Prevent Display Controller Power Drop on Sleep
+persist.sys.display.clear=1
+debug.sf.reprocces_graphics=1
+persist.sys.power.backlight=1
+
+# Fixation for Low Brightness
+persist.sys.phh.backlight.scale=1
+persist.sys.overlay.minimal_brightness=true
+
+# Optimize Display Colors
+persist.sys.sf.color_mode=0
+persist.sys.sf.color_saturation=1.35
+
+### ====================================================================
+
+### ASYMMETRIC 6x2 CPU SCHEDULER & SURFACEFLINGER BUFFER FIXATIONS
+
+### ====================================================================
+
+persist.input.filter.enabled=1
+persist.sys.input.multi_touch_limit=4
+ro.input.no_skip_key=0
+ro.input.no_resample=0
+input.pointer_pressure.scale=0.0
+
+ro.surface_flinger.set_idle_timer_ms=50
+ro.surface_flinger.set_touch_timer_ms=120
+ro.config.cpu_core_min=2
+persist.sys.power.core_control=0
+
+sys.use_fifo_ui=1
+persist.sys.use_sched_boost=true
+persist.sys.performance.level=max
+ro.hardware.egl=mali
+debug.renderengine.backend=gles
+ro.hardware.gralloc=ums9230
+ro.opengles.version=196610
+persist.sys.power.perfmode=1
+vendor.power.profiles.enable=1
+persist.sys.unisched.enable=1
+debug.unisched.boost=1
+
+renderthread.skia.reduceopstasksplitting=true
+debug.sf.enable_advanced_sf_cache=1
+debug.sf.predict_hwc_composition_strategy=1
+debug.hwui.render_dirty_regions=true
+debug.hwui.render_thread_count=4
+ro.hwui.render_thread_count=4
+ro.hwui.upload_texture_asynchronously=true
+
+# Enable Hardware Acceleration to Fix Blank Screen Compostion Issue
+ro.hardware.gralloc=ums9230
+persist.sys.composition.type=gpu
+dev.pm.gpu_samplingrate=1
+hwui.render_dirty_regions=false
+ro.config.avoid_gfx_accel=false
+persist.sys.force_highendgfx=true
+debug.sf.disable_hwc=0
+debug.sf.hw=1
+debug.egl.hw=1
+debug.egl.profiler=0
+ro.surface_flinger.max_virtual_display_dimension=2048
+debug.changelayer=0
+
+# Increases & Optimizes the Skia graphics cache size
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.r_render_buf_cache_size=8
+ro.hwui.path_cache_size=32
+
+####################################
+# from variable PRODUCT_PRODUCT_PROPERTIES
+####################################
+
+# Fixation for Dual Cameras by Yahya I.D.C
+vendor.camera.tran.nums=3
+
+# Fixation for screen 3000milisec~delay by Yahya I.D.C
+ro.lge.proximity.delay=15
+mot.proximity.delay=15
+
+# Fixation for Freedom Window Bugs in Third-Party packages by Yahya I.D.C
+persist.sys.freeform_window=true
+ro.config.develop_freeform=true
+persist.sys.scrolling.friction=0.015
+
+# Fixation for Statusbar Padding by PHH Treble
+persist.sys.phh.padding.end=10
+persist.sys.phh.padding.start=10
+persist.sys.phh.padding.top=8
+
+# Forces standard AOSP location provider initialization over vendor-broken HAL paths
+ro.hardware.gps=ums9230
+ro.hardware.gnss=ums9230
+persist.sys.gps.lpp=0
+assist.gps.enabled=1
+gps.vzw.fo.testing=0
+persist.vendor.radio.agps_mode=1
+persist.sys.location.precision=1
+persist.sys.gps.power.save=0
+
+# Re-maps standard AOSP Radio Interface Layer (RIL) commands to Unisoc blobs
+ro.telephony.ril_class=UnisocRIL
+ro.hardware.gps=sprd
+ro.vendor.radio.compat_num_of_ims_channels=1
+persist.sys.phh.radio.force_cognitive=true
+persist.sys.radio.ussd.fix=true
+
+# Forces compatibility with standard radio/network interfaces on GSIs
+gsm.sys.volte.state=1
+persist.sys.phh.disable_voice_call_in=false
+persist.sys.phh.ims.vzw=true
+persist.sys.phh.disable_a2dp_offload=true
+persist.vendor.radio.smart_lte=1
+persist.sys.phh.ims.caf=true
+persist.sys.phh.restart_ril=true
+persist.sys.phh.force_amr_wb=1
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.radio.rat_on=combine
+persist.radio.data_ltd_sys_ind=1
+persist.radio.data_con_rport=1
+gsm.sys.volte.state=1
+target.audio_hal.voip_delay=0
+ro.config.vc_call_vol_steps=14
+audio.offload.video=false
+persist.audio.handset.mic=digital
+sys.audio.init=1
+
+# Force Radio & RILD Compatibility on Unisoc HALs
+ro.telephony.default_network=9
+telephony.lteOnCdmaDevice=1
+persist.sys.unisched.voip.prioritize=1
+
+# Better call voice quality
+ro.ril.enable.amr.wideband=1
+
+# Disable Logcat
+debug.hwui.skia_atrace_enabled=false
+ro.kernel.android.checkjni=0
+logcat.live=disable
+debugtool.anrhistory=0
+profiler.debugmonitor=false
+profiler.launch=false
+profiler.hung.dumpdobugreport=false
+ro.config.nocheckin=1
+persist.service.lgospd.enable=0
+persist.service.pcsync.enable=0
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+
+# Control for OTG (optional)
+persist.vendor.otg_control=true
+
+# Optimizing Audio Experience
+vendor.audio.low.latency=true
+
+# Optimizing Network Performance
+wifi.supplicant_scan_interval=240
+net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
+
+# Force Unisoc GNSS hardware routing over GSI framework
+persist.sys.gps.source=vendor
+persist.sys.location.precision=1
+persist.vendor.radio.wcn=1
+ro.vendor.wcn.gps.chip=all
+ro.wcn.gps.chip=all
+persist.sys.phh.location.backport=true
+assistant.gps.support=0
+ro.ril.def.agps.mode=0
+ro.kernel.android.gps=ttyGA0
+persist.gps.node=ttyGA0
+
+# Bypass Android Go power duty cycling for location services
+ro.config.low_ram.disable_location_throttling=true
+persist.sys.location.high_accuracy=1
+ro.config.hw_power_saving=false
+persist.sys.gps.power.save=0
+
+# Disable mock-location blocks for background daemons
+persist.sys.modem.gps=1
+
+# Force RIL & Mobile Data stability on Unisoc basebands
+persist.sys.phh.radio.force_cognitive=true
+persist.vendor.radio.ims_enabled=1
+persist.sys.phh.ims.features=true
+
+# Adding some missing features (Blur Rendering, Transsion Features, etc..)
+ro.vendor.tran.xml.support=1
+ro.vendor.tran.ecc_remake_support=0
+ro.sf.blurs_are_expensive=1
+debug.sf.layer_blur_expensive=0
+ro.surface_flinger.supports_background_blur=1
+ro.com.google.lens.oem_camera_package=com.transsion.camera
+persist.sys.phh.camera.force_timestampsource=2
+
+# Some Props for Performance Enchant
+ro.sf.lcd_density=320
+ro.surface_flinger.blur_radius_scale=0.5
+ro.surface_flinger.max_background_blur_radius=12
+windowsmgr.max_events_per_sec=240
+ro.min_pointer_dur=8
+persist.sys.ui.hw=1
+video.accelerate.hw=1
+vendor.powerhal.rendering=1
+sys.uclamp.top_app.min=50
+sys.uclamp.surfaceflinger.min=40
+sys.uclamp.top_app.latency_sensitive=1

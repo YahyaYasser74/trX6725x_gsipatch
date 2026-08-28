@@ -1,0 +1,6 @@
+id=trX6725x-gsipatch
+name=Infinix SMART 10/Plus|NFC GSI Patch Module.
+version=v1.0
+versionCode=24
+author=YahyaYasser74
+description=Comprehensive fix and optimization engine for Unisoc T606/UMS9230; Strips Android Go from Vendor's blobs, unlocks native freeform windows, stabilizes AOD features, optimize 6x2 core scheduling and it's IPT callings, and applies structural media and memory fixations, with other critical fixations such as like LED backlight, OTG enabler, blank screen fix, etc etc..
