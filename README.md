@@ -1,4 +1,4 @@
-# trX6725x_gsipatch
+# iNFX6725-GSIPM
 An GSI Patch Module Exclusively for Infinix Smart 10/Plus|NFC, Made to Optimize the user experience in GSI Builds on the UMS9230 chipset, with all the essential critical/minor patches; such as CPU Core Layout bugs, fixation for drivers (e,g. LED Indicator, OTG), restoring most of misc from stock features, etc etc.. you can explore more features even more through it!
 
 The Requirements;
